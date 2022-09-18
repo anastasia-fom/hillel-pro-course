@@ -1,36 +1,3 @@
-//Запитати у користувача 15 чисел і обрахувати, скільки серед них додатніх, від’ємних і нулів.
-// Також визначатити кількість парних і непарних. Вивести статистику через console у зрозумілому форматі.
-
-let countPaired = 0;
-let countUnpaired = 0;
-let positiveNumbers = 0;
-let negativeNumbers = 0;
-let zeroNumbers = 0;
-
-for(let i = 1; i <= 15; i++){
-    const userNumbers = +prompt(`Please, enter ${i} number`);
-
-    if(userNumbers % 2 === 0){
-        countPaired++;
-    } else {
-        countUnpaired++;
-    }
-    if(userNumbers > 0) {
-        positiveNumbers++
-    } else if(userNumbers < 0) {
-        negativeNumbers++;
-    } else if(userNumbers === 0){
-        zeroNumbers++
-    }
-}
-
-console.log(`The number of paired numbers is ${countPaired}`);
-console.log(`The number of unpaired numbers is ${countUnpaired}`);
-console.log(`The number of positive numbers is ${positiveNumbers}`);
-console.log(`The number of negative numbers is ${negativeNumbers}`);
-console.log(`The number of zero is ${zeroNumbers}`);
-
-
 //Вивести в console числа, від 10 до 25 з кроком 0.5 (10 й 25 включно)
 
 for(let i = 10; i<=25; i+=0.5){
@@ -104,6 +71,39 @@ const USD = 36.76;
 for( let i = 10; i <=100; i+=10){
     console.log(`${i} USD = ${Intl.NumberFormat('ua').format(Math.floor(i * USD))} UAH`);
 }
+
+//Запитати у користувача 15 чисел і обрахувати, скільки серед них додатніх, від’ємних і нулів.
+// Також визначатити кількість парних і непарних. Вивести статистику через console у зрозумілому форматі.
+
+let countPaired = 0;
+let countUnpaired = 0;
+let positiveNumbers = 0;
+let negativeNumbers = 0;
+let zeroNumbers = 0;
+
+for(let i = 1; i <= 15; i++){
+    const userNumbers = +prompt(`Please, enter ${i} number`);
+
+    if(userNumbers % 2 === 0){
+        countPaired++;
+    } else {
+        countUnpaired++;
+    }
+    if(userNumbers > 0) {
+        positiveNumbers++
+    } else if(userNumbers < 0) {
+        negativeNumbers++;
+    } else if(userNumbers === 0){
+        zeroNumbers++
+    }
+}
+
+console.log(`The number of paired numbers is ${countPaired}`);
+console.log(`The number of unpaired numbers is ${countUnpaired}`);
+console.log(`The number of positive numbers is ${positiveNumbers}`);
+console.log(`The number of negative numbers is ${negativeNumbers}`);
+console.log(`The number of zero is ${zeroNumbers}`);
+
 
 
 
