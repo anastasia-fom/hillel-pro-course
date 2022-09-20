@@ -57,7 +57,7 @@ function sumNumbers(number1, number2){
     return sum;
 }
 
-sumNumbers(-2, 10);
+sumNumbers(-2, 10); //52
 
 //Написати функцію, яка приймає та конвертує температуру із Цельсій у Фаренгейт
 
