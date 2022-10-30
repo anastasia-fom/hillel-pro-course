@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homework 12 - Event</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="first-block">
+    <!--Завдання 1. Калькулятор -->
+    <div class="calculator">
+        <label>
+            <input type="text" class="calculator__result">
+        </label>
+
+        <div class="calculator__body">
+            <div class="calculator__numbers">
+                <button class="btn btn-reset">C</button>
+                <button class="btn calculator-number">7</button>
+                <button class="btn calculator-number">8</button>
+                <button class="btn calculator-number">9</button>
+
+                <button class="btn calculator-number">4</button>
+                <button class="btn calculator-number">5</button>
+                <button class="btn calculator-number">6</button>
+
+                <button class="btn calculator-number">1</button>
+                <button class="btn calculator-number">2</button>
+                <button class="btn calculator-number">3</button>
+
+                <button class="btn calculator-number calculator-zero">0</button>
+                <button class="btn calculator-number btn-separator">.</button>
+            </div>
+            <div class="calculator__action">
+                <button class="btn btn-action calculator-divide">/</button>
+                <button class="btn btn-action calculator-multiply">*</button>
+                <button class="btn btn-action calculator-minus">-</button>
+                <button class="btn btn-action calculator-plus">+</button>
+                <button class="btn btn-action calculator-result">=</button>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <!--Завдання 2. To do list -->
+    <div class="todo">
+        <h2>To do list</h2>
+
+        <form class="todo-add-field">
+            <label>
+                <input type="text" class="todo-input" placeholder="What do you have to do?">
+            </label>
+            <button class="btn-add">
+                Add
+            </button>
+        </form>
+
+        <ul class="todo-list">
+            <li class="todo-element">
+                <p>Do homework</p>
+                <button>X</button>
+            </li>
+            <li class="todo-element">
+                <p>Clean</p>
+                <button class="btn-todo-delete">X</button>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<script src="../js/main.js"></script>
+
+</body>
+</html>
