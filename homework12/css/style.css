@@ -1,0 +1,179 @@
+*{
+    --btn-text-color: white;
+    --btn-number-color: #775c60;
+    --btn-action-color: #c64a6e;
+    --btn-reset-color: #4f3d40;
+    --input-background: #f8d1c7;
+    --input-placeholder: #292322;
+    --main-background-color:linear-gradient(341.44deg, rgba(0, 0, 0, 0.2) 2.98%, rgba(198, 74, 110, 0.2) 52.73%, rgba(119, 92, 96, 0.2) 93.62%), #292223;
+    --font-size: 30px;
+}
+
+.first-block{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calculator, .todo{
+    width: 350px;
+    height: 560px;
+    background: var(--main-background-color);
+    border-radius: 50px;
+    margin: 0 auto;
+    padding: 10px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+/*Завдання 1. Калькулятор*/
+.calculator__result{
+    width: 290px;
+    height: 60px;
+    padding: 20px 20px 20px 20px;
+    margin: 5px;
+    background-color: var(--input-background);
+    border: 1px solid transparent;
+    border-radius: 30px;
+    font-size: var(--font-size);
+    font-weight: bold;
+    text-align: right;
+}
+
+.btn{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    border-color: transparent;
+    font-size: var(--font-size);
+    font-weight: bold;
+    margin: 3px;
+}
+
+.btn:hover{
+    opacity: 0.7;
+}
+
+.btn-reset{
+    background-color: var(--btn-reset-color);
+    color: var(--btn-text-color);
+    width: 262px;
+    border-radius: 40px;
+}
+
+.calculator__body{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.calculator__numbers{
+    width: 268px;
+    justify-content: space-between;
+}
+
+.calculator__action{
+    width: 82px;
+}
+
+.btn-action{
+    background-color: var(--btn-action-color);
+    color: var(--btn-text-color);
+}
+
+.calculator-number{
+    background-color: var(--btn-number-color);
+    color: var(--btn-text-color);
+}
+
+.calculator-zero{
+    width: 165px;
+    border-radius: 40px;
+}
+
+/*Завдання 2. To do list*/
+.todo{
+    margin-top: 50px;
+    width: 480px;
+    overflow: auto;
+}
+.todo .todo-add-field{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.todo .todo-input{
+    width: 290px;
+    height: 60px;
+    margin: 5px;
+    background-color: var(--input-background);
+    border: none;
+    border-radius: 10px;
+}
+
+h2{
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--btn-action-color);
+    text-align: center;
+}
+
+form input,
+form button{
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+}
+
+.btn-add{
+    background-color: var(--btn-action-color);
+    border-radius: 10px;
+    height: 80px;
+}
+
+.btn-add:hover{
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+ul{
+    padding: 10px;
+}
+ul::marker{
+    display: none;
+    color: transparent;
+}
+
+ul li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    list-style-type: none;
+    border-radius: 10px;
+    background-color: var(--btn-reset-color);
+    padding: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+}
+
+ul li p{
+    font-size: 20px;
+    color: var(--btn-text-color);
+}
+
+ul li button{
+    border: none;
+    color: var(--btn-text-color);
+    font-weight: bold;
+    font-size: 20px;
+    background-color: transparent;
+}
+
+ul li button:hover{
+    cursor: pointer;
+    color: var(--btn-action-color);
+}
