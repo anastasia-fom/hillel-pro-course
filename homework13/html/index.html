@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homework 13 - BOM</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!--Завдання 1. У інпут-полі користувач може ввести кількість відповідних секунд появи повідомлення-->
+    <div class="time-out-message">
+        <form>
+            <label>
+                <input type="number" class="write-number" placeholder="Enter time in milliseconds">
+            </label>
+            <button class="btn btn-timeout-message">Start timeout</button>
+        </form>
+    </div>
+
+    <!--Завдання 2. Відобразити таймер дати-->
+    <div class="time-out-date">
+        <form>
+            <label>
+                <input type="date" class="write-date" placeholder="Choose date">
+            </label>
+            <button class="btn btn-timeout-date">Start Campaign</button>
+        </form>
+
+        <div>
+            <p>До старту кампанії залишилось</p>
+            <p>
+                <span class="time-out-date__years">РОКИ</span>:<span class="time-out-date__month">МІСЯЦІ</span>:
+                <span class="time-out-date__hours">ГОДИНИ</span>:<span class="time-out-date__minutes">ХВИЛИНИ</span>
+            </p>
+        </div>
+    </div>
+
+    <!--Завдання 3. Ціна телефону-->
+    <div class="calculate">
+        <div class="calculate__wrapper">
+            <div>
+                <p>Оберіть марку телефону</p>
+                <label>
+                    <select class="calculate__phone">
+                        <option value="Iphone">Iphone</option>
+                        <option value="Samsung">Samsung</option>
+                        <option value="Pixel">Pixel</option>
+                        <option value="OnePlus">OnePlus</option>
+                    </select>
+                </label>
+            </div>
+
+            <div>
+                <p>Оберіть кількість оперативної пам'яті</p>
+                <label>
+                    <select class="calculate__ram">
+                        <option value="2">2</option>
+                        <option value="4">4</option>
+                        <option value="6">6</option>
+                        <option value="8">8</option>
+                    </select>
+                </label>
+            </div>
+
+            <div>
+                <p>Оберіть кількість вбудованної пам'яті</p>
+                <label>
+                    <select class="calculate__builtin">
+                        <option value="64">64</option>
+                        <option value="128">128</option>
+                        <option value="256">256</option>
+                        <option value="512">512</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+
+        <button class="btn calculate__button">Calculate</button>
+    </div>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

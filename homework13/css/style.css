@@ -1,0 +1,93 @@
+*{
+    --main-btn-color: #2F3271;
+    --btn-hover: #121446;
+    --btn-active: #383FC7;
+    --input-border: #C3C3C3;
+    --timer-color: #D9D9D9;
+    --main-dark-color: #0F1024;
+    --block-border-color: rgba(47, 50, 113, 0.29);
+}
+
+body{
+    padding: 20px;
+}
+
+p{
+    font-size: 20px;
+}
+
+.btn{
+    padding: 10px 30px;
+    font-size: 15px;
+    background-color: var(--main-btn-color);
+    color: white;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 4px 4px 10px rgba(24, 25, 33, 0.58);
+}
+
+.btn:hover{
+    cursor: pointer;
+    background-color: var(--btn-hover);
+}
+
+.btn:active{
+    background-color: var(--main-btn-color);
+    box-shadow: inset 0 0 15px rgba(24, 25, 33, 0.6);
+}
+
+.time-out-message, .time-out-date{
+    margin-bottom:30px;
+}
+
+.time-out-message, .time-out-date, .calculate{
+    border-radius: 10px;
+    border: 1px solid var(--block-border-color);
+    padding: 15px;
+}
+
+input{
+    width: 193px;
+    height: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--input-border);
+    margin: 0 10px 10px 0;
+}
+
+.time-out-date div:first-child{
+    margin-top: 50px;
+}
+
+.time-out-date div:last-child{
+    line-height: 90px;
+}
+
+.time-out-date p span{
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--timer-color);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+    margin: 0 10px;
+}
+
+.calculate .calculate__wrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.calculate .calculate__wrapper div{
+    flex-direction: column;
+    margin: 0 20px 20px 0;
+}
+
+.calculate div select{
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--input-border);
+}
+
+.calculate .calculate__result{
+    color: var(--main-dark-color);
+    font-weight: bold;
+}
