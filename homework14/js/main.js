@@ -1,9 +1,3 @@
-function fieldNotEmpty(field){
-    if(field === '' || field === ' '){
-        alert('Field not be empty!');
-    }
-}
-
 //Return the century of the input year. The input will always be a 4 digit string, so there is no need for validation.
 const dateInput = document.querySelector('.first-block__input');
 const centuryButton = document.querySelector('.first-block__button');
@@ -12,32 +6,11 @@ const resultCentury = document.querySelector('.first-block__result');
 function showCentury(stringOfYear){
     if(stringOfYear === '' || stringOfYear === ' '){
         alert('Field not be empty!');
-    } else
-    if(stringOfYear !== 4){
-        alert('Enter a year greater than 999')
-    } else
-    if(stringOfYear < 1100){
-        resultCentury.innerHTML = `It's 11th`;
-    } else if(stringOfYear < 1200){
-        resultCentury.innerHTML = `It's 12th`;
-    } else if(stringOfYear < 1300){
-        resultCentury.innerHTML = `It's 13th`;
-    } else if(stringOfYear < 1400){
-        resultCentury.innerHTML = `It's 14th`;
-    } else if(stringOfYear < 1500){
-        resultCentury.innerHTML = `It's 15th`;
-    } else if(stringOfYear < 1600){
-        resultCentury.innerHTML = `It's 16th`;
-    } else if(stringOfYear < 1700){
-        resultCentury.innerHTML = `It's 17th`;
-    } else if(stringOfYear < 1800){
-        resultCentury.innerHTML = `It's 18th`;
-    } else if(stringOfYear < 1900){
-        resultCentury.innerHTML = `It's 19th`;
-    } else if(stringOfYear < 2000){
-        resultCentury.innerHTML = `It's 20th`;
-    } else if(stringOfYear < 2100){
-        resultCentury.innerHTML = `It's 21th`;
+    } else if(stringOfYear.length > 4){
+        alert('Enter the year with no more than 4 digits')
+    } else{
+        const century = +stringOfYear.split('').slice(0,2).join('') + 1;
+        resultCentury.innerHTML = `It's ${century}th`;
     }
 }
 
@@ -56,23 +29,26 @@ const textButton = document.querySelector('.second-block__button');
 const resultNewString = document.querySelector('.second-block__result');
 
 function vowelOne(inputString){
-    let vowels = 'aeiouy';
-    let consonants = 'bcdfgklmnpqstvxzhrw';
-    let symbols = '.,- '
+    const vowels = ['a','e','i','o','u','y'];
+    const consonants = ['b','c','d','f','g','j','k','l','m','n','p','q','s','t','v','x','z','h','r','w'];
+    const symbols = ['.', ',', '-', ' ', '!', '`', '₴', '~', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '=',
+        '+', ';', ':', '?', '<', '>', '|', '/', '{', '}', '[', ']', '№', '"']
+    const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     let newString = '';
-    fieldNotEmpty(inputString);
-
-    for (let i = 0; i < inputString.length; i++) {
-        let char = inputString[i];
-        if (vowels.includes(char)) {
-            newString += 1;
-        } else if(consonants.includes(char)){
-            newString += 0;
-        } else if(symbols.includes(char)){
-            newString += 0;
+    if(inputString === '' || inputString === ' '){
+        alert('Field not be empty!');
+    } else {
+        for (let i = 0; i < inputString.length; i++) {
+            let char = inputString[i];
+            if (vowels.join('').includes(char) || vowels.join('').toUpperCase().includes(char)){
+                newString += 1;
+            } else if(consonants.join('').includes(char) || consonants.join('').toUpperCase().includes(char)
+                || symbols.join('').includes(char) || numbers.join('').includes(char)){
+                newString += 0;
+            }
         }
+        resultNewString.innerHTML = `${newString}`;
     }
-    resultNewString.innerHTML = `${newString}`;
 }
 
 textButton.addEventListener('click', function (event){
@@ -92,19 +68,19 @@ const resultChangeString = document.querySelector('.third-block__result');
 
 function spinWords(string){
     let words = string.split(' ');
-    let reverseWord = '';
     let resultString = '';
-    fieldNotEmpty(string)
-    for(let i = 0; i < words.length; i++){
-        if(words[i].length >= 5){
-            reverseWord = words[i].split('').reverse();
-            resultString += ` ${reverseWord.join('')} `;
-        } else{
-            resultString += ` ${words[i]} `
+    if(string === '' || string === ' '){
+        alert('Field not be empty!');
+    } else{
+        for(let i = 0; i < words.length; i++){
+            if(words[i].length >= 5){
+                resultString += ` ${words[i].split('').reverse().join('')} `;
+            } else{
+                resultString += ` ${words[i]} `
+            }
         }
+        resultChangeString.innerHTML = `${resultString}`;
     }
-
-    resultChangeString.innerHTML = words.length <= 2 ? `${resultString.split(' ').join('')}` : `${resultString}`;
 }
 
 changeStringButton.addEventListener('click', function (event){
@@ -119,11 +95,14 @@ const searchNumberButton = document.querySelector('.four-block__button');
 const resultSearchNumber = document.querySelector('.four-block__result');
 
 function highAndLow(string){
-    fieldNotEmpty(string);
-    let inputString = string.split(' ');
-    let minNumber = Math.min(...inputString);
-    let maxNumber = Math.max(...inputString);
-    resultSearchNumber.innerHTML = `Min number: ${minNumber}. Max number: ${maxNumber}.`;
+    const inputString = string.split(' ');
+    const minNumber = Math.min(...inputString);
+    const maxNumber = Math.max(...inputString);
+    if(string === '' || string === ' '){
+        alert('Field not be empty!');
+    } else{
+        resultSearchNumber.innerHTML = `Min number: ${minNumber}. Max number: ${maxNumber}.`;
+    }
 }
 
 searchNumberButton.addEventListener('click', function (event){
@@ -140,8 +119,7 @@ const showPhoneNumber = document.querySelector('.five-block__result');
 function createPhoneNumber(numbers){
     if(numbers === '' || numbers === ' '){
         alert('Field not be empty!');
-    }else
-    if(numbers.length !== 10){
+    }else if(numbers.length !== 10){
         alert('This field must have only 10 elements!')
     } else {
         showPhoneNumber.innerHTML = `(${numbers.slice(0, 3)}) ${numbers.slice(3, 6)}-${numbers.slice(6, 11)}`;
