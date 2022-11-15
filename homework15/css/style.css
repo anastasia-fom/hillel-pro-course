@@ -1,0 +1,83 @@
+*{
+    --font-size-l: 20px;
+    --font-size-m: 15px;
+    --select-border-color: #E4E4E4;
+    --main-btn-color: #5680ED;
+    --active-btn-color: #8860D0;
+    --hover-btn-color: #5AB9EA;
+    --color-name: #88BEE2;
+}
+
+.name-city{
+    color: var(--color-name);
+}
+
+.weather__information{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.weather__information-block{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+
+    width: 900px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.05);
+    margin: 20px;
+}
+
+.weather__img{
+    width: 100px;
+}
+
+.weather__date, .weather__day{
+    font-size: var(--font-size-l);
+    font-weight: bold;
+}
+
+.weather__temperature, .weather__phase{
+    font-size: var(--font-size-l);
+    margin-right: 30px;
+    line-height: 30px;
+}
+
+.weather__title{
+    font-weight: bold;
+}
+
+
+.select-weather{
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+
+select{
+    border: 1px solid var(--select-border-color);
+    padding: 10px 50px;
+    border-radius: 10px;
+}
+
+button{
+    padding: 10px 50px;
+    background-color: var(--main-btn-color);
+    border: transparent;
+    border-radius: 10px;
+    color: white;
+    margin-left: 20px;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: var(--hover-btn-color);
+}
+
+button:active{
+    background-color: var(--active-btn-color);
+}
