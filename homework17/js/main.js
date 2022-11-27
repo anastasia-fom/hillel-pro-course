@@ -62,7 +62,7 @@ function showWeather(data) {
 
         //Додаємо дату
         const dateElement = document.createElement('p');
-        dateElement.className = 'weather__date';
+        dateElement.classList = 'weather__date';
 
         //Обираємо день
         let day = new Date(weather.Date).getDay();
@@ -95,7 +95,7 @@ function showWeather(data) {
 
         //Обираємо та додаємо зображення
         const img = document.createElement('img');
-        img.className = 'weather__img';
+        img.classList = 'weather__img';
         img.alt = 'Picture of weather';
         if(weather.Day.IconPhrase === 'Dreary' || weather.Day.IconPhrase === 'Mostly cloudy' || weather.Day.IconPhrase === 'Cloudy'
             || weather.Day.IconPhrase === 'Partly sunny') {
@@ -126,13 +126,13 @@ function showWeather(data) {
 
         //Додаємо температуру
         const temperature = document.createElement('p');
-        temperature.className = 'weather__temperature';
+        temperature.classList = 'weather__temperature';
         temperature.innerHTML = `<span class="weather__title">Minimum:</span> ${temperatureConversion(weather.Temperature.Minimum.Value)} °C <br> 
                                          <span class="weather__title">Maximum:</span> ${temperatureConversion(weather.Temperature.Maximum.Value)} °C`;
 
         //Додаємо тип погоди
         const phase = document.createElement('p');
-        phase.className = 'weather__phase';
+        phase.classList = 'weather__phase';
         phase.innerHTML = `<span class="weather__title">Phase in night:</span> ${weather.Day.IconPhrase}<br> 
                                     <span class="weather__title">Phase in day:</span> ${weather.Night.IconPhrase}`;
 
@@ -140,7 +140,7 @@ function showWeather(data) {
         const divInformation = document.querySelector('.weather__information');
         //Додаємо всі елементи в блок, а потім до одного спільного блоку
         const divBlockOneDay = document.createElement('div');
-        divBlockOneDay.className = 'weather__information-block';
+        divBlockOneDay.classList = 'weather__information-block';
         divBlockOneDay.append(dateElement, img, temperature, phase);
         divInformation.append(divBlockOneDay);
     }
@@ -152,7 +152,7 @@ const buttonsNeighbors = document.querySelector(".buttons");
 //Додаванняя інформації до кнопок
 const appendButtonNeighbors = (name, key) => {
     const btnNeighbor = document.createElement("button");
-    btnNeighbor.className = "button-neighbors";
+    btnNeighbor.classList = "button-neighbors";
     btnNeighbor.innerHTML = name;
     btnNeighbor.id = key;
 
